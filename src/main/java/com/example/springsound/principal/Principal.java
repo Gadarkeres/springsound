@@ -34,7 +34,6 @@ public class Principal {
                     2- Cadastrar músicas
                     3- Listar músicas
                     4- Buscar músicas por artistas
-                    5- Pesquisar dados sobre um artista
 
                     9 - Sair
                     """;
@@ -57,7 +56,6 @@ public class Principal {
                     buscarMusicasPorArtista();
                     break;
                 case 5:
-                    pesquisarDadosDoArtista();
                     break;
                 case 9:
                     System.out.println("Encerrando a aplicação!");
@@ -68,14 +66,12 @@ public class Principal {
         }
     }
 
-    private void pesquisarDadosDoArtista() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pesquisarDadosDoArtista'");
-    }
-
     private void buscarMusicasPorArtista() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarMusicasPorArtista'");
+        System.out.println("Buscar musicas de qual artista? ");
+        var artista = leitura.nextLine();
+        List<Musica> musicas = repository.buscaMusicasPorArtista(artista);
+        musicas.forEach(System.out::println);
+
     }
 
     private void listarMusicas() {
